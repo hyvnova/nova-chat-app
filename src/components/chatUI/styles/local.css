@@ -1,0 +1,91 @@
+body {
+    overflow: hidden;
+}
+
+.message-container {
+    display: flex;
+    flex-flow: column-reverse nowrap;
+    align-items: flex-start;
+    margin: auto;
+    padding: 1em;
+    border-radius: 15px;
+    height: 85%;
+    overflow-y: auto;
+}
+
+.message-box {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    padding: .5em;
+    max-height: 6em;
+    width: max-content;
+}
+
+p {
+    margin: 0;
+}
+
+.message-content {
+    color: white;
+    font-size: 18px;
+    font-family: 'Roboto';
+}
+.message-title {
+    font-size: 18px;
+    color: white;
+    margin-left: .25em;
+
+    border-left: white 2px solid;
+    padding-left: 0.5em;
+}
+
+.content-box {
+    display: flex;
+    justify-content: flex-start;
+
+    padding: 0.25em 1em 0 1em;
+    margin-top: 0.25em;
+
+    background:#151e6d;
+    border-radius: 15px;
+    border-top-left-radius: 0%;
+
+    min-height: 2em;
+    height: auto;
+}
+
+.background-box {
+    position: absolute;
+    top: 85%;
+
+    display: flex;
+    justify-content:center;
+    align-items: center;
+
+    width: 100%;
+    background-color: #151e6d;
+
+    padding: 0.5em 1em;
+
+    padding: .25em .5em;
+}
+
+
+input[name="message-input"] {
+    width: 50%;
+    height: 1em;;
+    border: none;
+    border-radius: 10px;
+    background-color:  whitesmoke;
+    margin-top: 0.25em;
+}
+
+button[name="send"] {
+    margin-left: 1em;
+    margin-top: 0.25em;
+    margin-right: 1em;
+    border-radius:50%;
+    background-color: whitesmoke;
+    color: #151e6d;
+}

@@ -1,0 +1,12 @@
+workflow
+
+global styles, the styles folder found at src/components/styles  contains styles global to all screens and components 
+
+inside of components folder you will 2 kinds of object
+    - a UI manager file (.jsx)
+    - a folder that contains all resoures as styles, others components to build a UI
+
+note : not all components need a resource folder
+
+inside the folder, at style folder, if exists the local.css file are the styles applied to all components in that UI
+aside from that all other styles must be "local" to the components in folder.
