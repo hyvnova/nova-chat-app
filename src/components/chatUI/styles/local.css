@@ -4,7 +4,7 @@ body {
 
 .message-container {
     display: flex;
-    flex-flow: column-reverse nowrap;
+    flex-flow: column-reverse ;
     align-items: flex-start;
     margin: auto;
     padding: 1em;
@@ -16,10 +16,11 @@ body {
 .message-box {
     display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
     padding: .5em;
-    max-height: 6em;
+    max-height: 20%;
     width: max-content;
+    max-width: 100%;
+
 }
 
 p {
@@ -42,9 +43,8 @@ p {
 
 .content-box {
     display: flex;
-    justify-content: flex-start;
 
-    padding: 0.25em 1em 0 1em;
+    padding: 0.5em 1em 0.5em 1em;
     margin-top: 0.25em;
 
     background:#151e6d;
@@ -52,7 +52,9 @@ p {
     border-top-left-radius: 0%;
 
     min-height: 2em;
-    height: auto;
+    height: fit-content;
+
+    overflow: hidden auto;
 }
 
 .background-box {
