@@ -23,8 +23,8 @@ export default function App() {
         <SocketContext.Provider value={socket}>
 
             <Routes>
-                <Route path="/nova-chat-app/" element={<LoginUI setUsername={setUsername} setRoom={setRoom} />} />
-                <Route path="/nova-chat-app/chat" element={<ChatUI username={username} room={room} />} />
+                <Route path="/" element={<LoginUI setUsername={setUsername} setRoom={setRoom} />} />
+                <Route path="/chat" element={<ChatUI username={username} room={room} />} />
             </Routes> 
 
         </SocketContext.Provider> 
