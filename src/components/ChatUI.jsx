@@ -20,7 +20,6 @@ export default function ChatUI({username, room}) {
   // message author text color
   const [color, setColor] = useState("#" + Math.floor(Math.random()*16777215).toString(16))
 
-
   if (username === "") { username = localStorage.getItem("username"); }
   if (room === "") { room = localStorage.getItem("room"); }
 

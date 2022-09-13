@@ -12,7 +12,7 @@ export default function MessageForm({handleSubmit}) {
             }
         }>
             <div className="background-box">
-                <input name="message-input" type="text" 
+                <input name="message-input" autoFocus type="text" 
                     placeholder="Message"
                     autoComplete="off"
 
