@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/EZSNoVa/nova-chat-app/static/css/main.eceaf8bf.css",
-    "main.js": "/EZSNoVa/nova-chat-app/static/js/main.a553d777.js",
-    "index.html": "/EZSNoVa/nova-chat-app/index.html",
-    "main.eceaf8bf.css.map": "/EZSNoVa/nova-chat-app/static/css/main.eceaf8bf.css.map",
-    "main.a553d777.js.map": "/EZSNoVa/nova-chat-app/static/js/main.a553d777.js.map"
+    "main.css": "/nova-chat-app/static/css/main.eceaf8bf.css",
+    "main.js": "/nova-chat-app/static/js/main.a553d777.js",
+    "index.html": "/nova-chat-app/index.html",
+    "main.eceaf8bf.css.map": "/nova-chat-app/static/css/main.eceaf8bf.css.map",
+    "main.a553d777.js.map": "/nova-chat-app/static/js/main.a553d777.js.map"
   },
   "entrypoints": [
     "static/css/main.eceaf8bf.css",
