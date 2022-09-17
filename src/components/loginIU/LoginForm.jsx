@@ -25,7 +25,7 @@ export default function LoginForm({handleSubmit}) {
 
             <label htmlFor="room-input">Room Code</label>
             <div className={"row"}>
-            <input type="text" name="room-input" required maxLength={15} onChange={
+            <input type="text" name="room-input" required maxLength={6} onChange={
                 e => { setRoom(e.target.value); }
             }/>
 
