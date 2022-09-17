@@ -5,6 +5,7 @@ import './chatUI/styles/local.css';
 //components
 import MessageContainer from './chatUI/MessageContainer';
 import MessageForm from './chatUI/MessageForm';
+import RoomInfo from './chatUI/RoomInfo';
 
 // contexts
 import { SocketContext } from '../contexts/socket';
@@ -60,6 +61,7 @@ export default function ChatUI({username, room}) {
 
   return (
     <>
+      <RoomInfo room={room} />
       <MessageContainer  messages={messages} />
       <MessageForm handleSubmit={formHandleSubmit} />
     </>

@@ -91,3 +91,42 @@ button[name="send"] {
     background-color: whitesmoke;
     color: #151e6d;
 }
+
+
+/* room info */
+.room-info-box {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-flow: column wrap;
+
+    position: absolute;
+    left: calc(100% - 7em);
+    margin: 1em;
+    width: fit-content;
+    height: fit-content;
+    padding: 0.5em 0.75em;
+    
+    border-radius: 10px;
+
+    background-color: rgb(255, 255, 255);
+
+    box-shadow: -3px 3px 2px rgb(109, 109, 109);
+}
+
+span {
+    color: black;
+}
+
+.room-info-row {
+    padding: 0.25em;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+i {
+    margin: .25em;
+}
