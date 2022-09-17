@@ -1,9 +1,11 @@
 # Checkout App deploy at: [NoVa Chat App](https://ezsnova.github.io/nova-chat-app/)
 
 ## If you want to try it locally:
-- Change server url at src\contexts\socket.jsx
+- Change server url at "**src\contexts\socket.jsx**"
     - from: https://nova-chat-app-server.ezsnova.repl.co
     - to : http://your_ip_on_local_network:3020
+
+- Remove homepage prefix *(/nova-chat-app)* from routes at "**src\App.jsx**
 
 - To start server, run this command
 ```bash
