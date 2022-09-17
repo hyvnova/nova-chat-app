@@ -11,4 +11,3 @@ note : not all components need a resource folder
 inside the folder, at style folder, if exists the local.css file are the styles applied to all components in that UI
 aside from that all other styles must be "local" to the components in folder.
 
-"homepage": "https://ezsnova.github.io/nova-chat-app/",
