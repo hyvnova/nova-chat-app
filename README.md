@@ -5,7 +5,7 @@
     - from: https://nova-chat-app-server.ezsnova.repl.co
     - to : http://your_ip_on_local_network:3020
 
-- Remove homepage prefix *(/nova-chat-app)* from routes at "**src\App.jsx**
+- remove "**homepage**" attribute from "**package.json**"
 
 - To start server, run this command
 ```bash
