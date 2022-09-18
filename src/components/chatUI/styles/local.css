@@ -6,7 +6,7 @@ body {
     display: flex;
     flex-flow: column-reverse ;
     align-items: flex-start;
-    margin: auto;
+    margin: 0.25em;
     padding: 1em;
     border-radius: 15px;
     height: 85%;
@@ -16,11 +16,10 @@ body {
 .message-box {
     display: flex;
     flex-flow: column nowrap;
-    padding: .5em;
-    max-height: 20%;
+    padding: .75em;
+    max-height: max(20%, 6em);
     width: max-content;
     max-width: 100%;
-
 }
 
 p {
@@ -101,7 +100,7 @@ button[name="send"] {
     flex-flow: column wrap;
 
     position: absolute;
-    left: calc(100% - 7em);
+    left: calc(100% - 7.5em);
     margin: 1em;
     width: fit-content;
     height: fit-content;
@@ -129,4 +128,26 @@ span {
 
 i {
     margin: .25em;
+}
+
+.sys-message-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    padding: 0.35em;
+
+    background-color: aliceblue;
+    border-bottom: 4px springgreen solid;
+    border-radius: 40px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+
+}
+
+.sys-message-content {
+    font-size: 1.25em;
+    font-weight: 500;
+    color: rgb(0, 0, 0);
 }

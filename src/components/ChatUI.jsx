@@ -16,10 +16,16 @@ import { useState, useContext, useEffect } from 'react';
 
 // this components loads entire chat screen (chatScreen folder)
 export default function ChatUI({username, room}) {
-  const [messages, setMessages] = useState([]);
+
+  // chat items
+  const [chatItems, setChatItems] = useState([]);
 
   // message author text color
-  const [color, setColor] = useState("#" + Math.floor(Math.random()*16777215).toString(16))
+  const color = localStorage.getItem("color") 
+  if (color === undefined) {
+    const color = "#" + Math.floor(Math.random()*16777215).toString(16)
+    localStorage.setItem("color", color)
+  } 
 
   if (username === "") { username = localStorage.getItem("username"); }
   if (room === "") { room = localStorage.getItem("room"); }
@@ -28,23 +34,39 @@ export default function ChatUI({username, room}) {
   const socket = useContext(SocketContext);
 
   // join room
-  socket.emit("join-room", room);
+  socket.emit("join-room", room, username);
 
   // recover messages
   useEffect( () => {
-    if (messages.length > 0) return;
+    if (chatItems.length > 0) return;
 
     socket.emit("request-messages", room);
     socket.on("get-messages", recoveredMessages => {
-      setMessages([...messages, ...recoveredMessages]);
-    })
 
-  }, [])
+      setChatItems([
+        ...recoveredMessages.map( (item) => {
+          return ["Message", item]
+        }),
+        ...chatItems])
+      
+    })}, [])
+  
+  // when user joins the room
+  socket.on("user-joined-room", user => {
+    setChatItems([ ["SysMessage", {content: `${user} Joined the room`}] , ...chatItems])
+  })
+
+  // when user leaves the room
+  socket.on("user-left-room", user => {
+    console.log("left");
+    setChatItems([ ["SysMessage", {content: `${user} Leaved the room`, color: "#ddd000"}] , ...chatItems])
+  })
+
 
   // reciveving messages
   socket.on("receive-message", (message) => {
     // message = {author: username, content: message}
-    setMessages([message, ...messages ]);
+    setChatItems([["Message", message], ...chatItems])
   })
 
   // form on submit function 
@@ -52,17 +74,15 @@ export default function ChatUI({username, room}) {
       e.preventDefault();
       if (message === "") return
 
-      setMessages([{author: username, content: message, color: color}, ...messages]);
-
+      setChatItems([["Message", {author: username, content: message, color: color}], ...chatItems])
       socket.emit("send-message", {author: username, content: message, color: color}, room)
-
       setMessage("")
   }
 
   return (
     <>
       <RoomInfo room={room} />
-      <MessageContainer  messages={messages} />
+      <MessageContainer  chatItems={chatItems} />
       <MessageForm handleSubmit={formHandleSubmit} />
     </>
   );

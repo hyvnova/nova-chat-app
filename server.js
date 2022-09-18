@@ -46,6 +46,7 @@ io.on("connection", socket => {
         activeUsers[socket.room].ids = activeUsers[socket.room].ids.filter(item => ( item !== socket.id) );
 
         io.to(socket.room).emit("update-active-users", activeUsers[socket.room].count);
+        io.to(room).emit("user-left-room", socket.username)
     })
 
     socket.on("leave", room => {
@@ -56,14 +57,16 @@ io.on("connection", socket => {
         activeUsers[room].ids = activeUsers[room].ids.filter(item => ( item !== socket.id) );
 
         io.to(room).emit("update-active-users", activeUsers[socket.room].count);
+        io.to(room).emit("user-left-room", socket.username)
     })
 
-    socket.on("join-room", room => {
+    socket.on("join-room", (room, username) => {
         // leave other rooms
         var rooms = io.sockets.adapter.sids[socket.id]; for(var room in rooms) { socket.leave(room); }
 
         socket.join(room);
         socket.room = room;
+        socket.username = username;
 
         // if room exists and id alredy in then return
         if (activeUsers[room] && activeUsers[socket.room].ids.includes(socket.id) ) return;
@@ -79,6 +82,7 @@ io.on("connection", socket => {
         }
 
         io.to(room).emit("update-active-users", activeUsers[socket.room].count)
+        io.to(room).emit("user-joined-room", username)
     })
     
     socket.on("send-message", (message, room) => {

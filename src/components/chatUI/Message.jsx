@@ -1,8 +1,8 @@
 
 
 
-export default function Message({message}) {
-    const {author, content, color} = message;
+export default function Message({props}) {
+    const {author, content, color} = props;
     return (
       <div className="message-box" >
         <p className="message-title"  title="Message author" style={{
