@@ -1,11 +1,11 @@
-
-
+//css
+import "./styles/Message.css"
 
 export default function Message({props}) {
     const {author, content, color} = props;
     return (
       <div className="message-box" >
-        <p className="message-title"  title="Message author" style={{
+        <p className="message-author"  title="Message author" style={{
           color: color
         }}> {author} 
         </p>

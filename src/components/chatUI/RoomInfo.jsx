@@ -1,3 +1,6 @@
+//css
+import "./styles/RoomInfo.css"
+
 // hooks
 import useActiveUsers from "../../hooks/activeUser";
 

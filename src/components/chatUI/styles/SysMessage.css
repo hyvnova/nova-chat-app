@@ -1,0 +1,18 @@
+.sys-message-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.25em;
+    margin: 0.5em 0;
+    width: 100%;
+
+    border-bottom: 3px springgreen solid;
+
+}
+
+.sys-message-content {
+    font-size: 1em;
+    font-weight: 400;
+    color: rgb(255, 255, 255);
+}

@@ -1,5 +1,8 @@
-import { useState } from "react";
+//css
+import "./styles/MessageForm.css"
 
+// hoook
+import { useState } from "react";
 
 export default function MessageForm({handleSubmit}) {
 
@@ -15,6 +18,7 @@ export default function MessageForm({handleSubmit}) {
                 <input name="message-input" autoFocus type="text" 
                     placeholder="Message"
                     autoComplete="off"
+                    maxLength={300}
 
                 value={message}
                  onChange={

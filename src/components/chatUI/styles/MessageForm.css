@@ -1,0 +1,54 @@
+.background-box {
+    position: absolute;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+
+    width: 100%;
+    background-color: #151e6d;
+
+    padding: .5em;
+    top: 85%;
+}
+
+input[name="message-input"] {
+    margin: 0 !important;
+    max-width: 90%;
+    height: 1em;
+    border-radius: 10px;
+    background-color:  rgb(206, 206, 206);
+
+    overflow-y: scroll;
+
+    transition: background-color 1000ms linear;
+}
+
+input[name="message-input"]:focus {
+    background-color: whitesmoke;
+}
+
+button[name="send"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 3em;
+    width: 3em;
+
+    margin: 0%;
+    margin-left: 2em;
+    margin-right: 1em;
+
+    border-radius:50%;
+    background-color: white;
+    color: #151e6d;
+
+    transition: width 200ms;
+    transition: height 200ms;
+
+}
+
+button[name="send"]:hover {
+    width: 3.5em;
+    height: 3.5em;
+}
