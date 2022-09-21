@@ -10,23 +10,40 @@ import LoginUI from './components/LoginUI';
 
 // contexts
 import { SocketContext, socket } from './contexts/socket';
+import { DataContext } from "./contexts/data";
 
 // hoooks
 import { useState } from 'react';
 
 export default function App() {
-    const [username, setUsername] = useState("");
-    const [room, setRoom] = useState("");
+    var [username, setUsername] = useState("");
+    var [room, setRoom] = useState("");
+    var [showConsole, setShowConsole] = useState(false);
+
+    // message author text color
+    var [color, setColor] = useState(localStorage.getItem("color")); 
+    if (color === undefined) {
+        setColor("#" + Math.floor(Math.random()*16777215).toString(16))
+        localStorage.setItem("color", color)
+
+    } 
 
     return (
     <>
         <SocketContext.Provider value={socket}>
+        <DataContext.Provider value={{
+            room, setRoom,
+            username, setUsername,
+            color, setColor,
+            showConsole, setShowConsole
+        }}>
 
             <Routes>
-                <Route path="/" element={<LoginUI setUsername={setUsername} setRoom={setRoom} />} />
-                <Route path="/chat" element={<ChatUI username={username} room={room} />} />
+                <Route path="/" element={<LoginUI />} />
+                <Route path="/chat" element={<ChatUI />} />
             </Routes> 
-
+        
+        </DataContext.Provider>
         </SocketContext.Provider> 
     </>
     );

@@ -1,5 +1,7 @@
 .background-box {
-    position: absolute;
+    position: fixed;
+    bottom: 0%;
+
     display: flex;
     justify-content:center;
     align-items: center;
@@ -8,7 +10,6 @@
     background-color: #151e6d;
 
     padding: .5em;
-    top: 85%;
 }
 
 input[name="message-input"] {

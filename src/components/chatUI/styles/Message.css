@@ -22,7 +22,7 @@ p {
 }
 
 .message-author {
-    font-size: 18px;
+    font-size: 20px;
     color: white;
     margin-left: .25em;
 
@@ -52,4 +52,18 @@ p {
     -webkit-transition: background-color 1000ms linear;
     -ms-transition: background-color 1000ms linear;
     transition: background-color 1000ms linear;
+}
+
+.message-header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.message-timestamp {
+    margin-left: 12%;
+    color: white;
+
+    font-size: 15px;
 }

@@ -4,8 +4,15 @@ import "./loginIU/styles/local.css";
 // components
 import LoginForm from "./loginIU/LoginForm";
 
+// hooks
+import { useContext } from "react";
+
+// context
+import { DataContext } from "../contexts/data";
+
 // renders all login UI
-export default function LoginUI({setUsername, setRoom}) {
+export default function LoginUI() {
+    const {setUsername, setRoom} = useContext(DataContext)
 
     // form on submit function 
     function formHandleSubmit(e, username, room) {

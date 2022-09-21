@@ -1,0 +1,32 @@
+.console-cursor {
+    width: 100% !important;
+
+    font-family: Consolas;
+    color: white;
+}
+
+.console-input {
+    font-family: Consolas !important;
+    display: inline;
+    width: max-content !important; 
+ 
+    margin-left: 0.5em !important;
+    height: 1.2em !important;
+    color: white;
+
+    border: none !important;
+    outline: none !important;
+    border-radius: 8px;
+
+    padding: 0.5em;
+}
+
+.console-command-line {
+    width: max-content;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+
+    margin: 0.5em;
+
+}

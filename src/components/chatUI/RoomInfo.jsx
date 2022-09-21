@@ -10,7 +10,7 @@ export default function RoomInfo({room}) {
 
     return (
         <div className="room-info-box">
-            <div className='room-info-row'> <i className="fa-solid fa-house" style={{
+            <div className='room-info-row' title="Room code"> <i className="fa-solid fa-house" style={{
                 color: "#5160e4"
                 }}></i>  
                 <p>
@@ -18,7 +18,7 @@ export default function RoomInfo({room}) {
                 </p>
             </div>
 
-            <div className="room-info-row"><i className="fa-solid fa-user" style={{
+            <div className="room-info-row" title="Number of active users"><i className="fa-solid fa-user" style={{
                 color: "#5160e4"
                 }}></i> 
                 <p>

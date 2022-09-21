@@ -5,26 +5,23 @@ import './chatUI/styles/local.css';
 import ChatContainer from './chatUI/ChatContainer';
 import MessageForm from './chatUI/MessageForm';
 import RoomInfo from './chatUI/RoomInfo';
+import Console from './Console';
 
 // contexts
 import { SocketContext } from '../contexts/socket';
+import { DataContext } from '../contexts/data';
 
 // hooks
 import { useState, useContext, useEffect } from 'react';
 
 
 // this components loads entire chat screen (chatScreen folder)
-export default function ChatUI({username, room}) {
+export default function ChatUI() {
+  var {username, room, color, showConsole, setShowConsole} = useContext(DataContext)
 
   // chat items
   const [chatItems, setChatItems] = useState([]);
 
-  // message author text color
-  const color = localStorage.getItem("color") 
-  if (color === undefined) {
-    const color = "#" + Math.floor(Math.random()*16777215).toString(16)
-    localStorage.setItem("color", color)
-  } 
 
   if (username === "") { username = localStorage.getItem("username"); }
   if (room === "") { room = localStorage.getItem("room"); }
@@ -66,12 +63,27 @@ export default function ChatUI({username, room}) {
     setChatItems([message, ...chatItems])
   })
 
-  // form on submit function 
+  // when a message is sent
   function formHandleSubmit(e, message_content, setMessage) {
       e.preventDefault();
       if (message_content === "") return
 
-      let message = {type: "Message", props: {author: username, content: message_content, color: color}}
+      // commands
+      if (message_content.toLowerCase() === "/cmd") {
+        setShowConsole(true);
+      }
+
+
+      // message object
+      let message = {
+        type: "Message", props: 
+          {
+            author: username, 
+            content: message_content, 
+            color: color, 
+            timestamp: new Date().toLocaleString()
+          }
+        }
 
       setChatItems([message, ...chatItems])
       socket.emit("send-message", message, room)
@@ -83,6 +95,9 @@ export default function ChatUI({username, room}) {
       <RoomInfo room={room} />
       <ChatContainer  chatItems={chatItems} />
       <MessageForm handleSubmit={formHandleSubmit} />
+
+      <Console />
+      {/* {showConsole && <Console props={{setShowConsole}}/>} */}
     </>
   );
 }
