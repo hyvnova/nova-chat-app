@@ -1,14 +1,14 @@
 .background-box {
     position: fixed;
-    bottom: 0%;
+    bottom: 2%;
 
     display: flex;
     justify-content:center;
     align-items: center;
 
-    width: 100%;
-    background-color: #151e6d;
-
+    width: 98%;
+    background-color: #0B1322;
+    border-radius: 12px;
     padding: .5em;
 }
 
@@ -17,15 +17,18 @@ input[name="message-input"] {
     max-width: 90%;
     height: 1em;
     border-radius: 10px;
-    background-color:  rgb(206, 206, 206);
+
+    background-color: rgb(5, 7, 78);
+    color: white;
 
     overflow-y: scroll;
 
-    transition: background-color 1000ms linear;
-}
+    border: none;
+    box-shadow: -1px 2px 1px rgb(51, 51, 51);
+}   
 
 input[name="message-input"]:focus {
-    background-color: whitesmoke;
+    background-color: #151e6d;
 }
 
 button[name="send"] {
@@ -41,15 +44,18 @@ button[name="send"] {
     margin-right: 1em;
 
     border-radius:50%;
-    background-color: white;
-    color: #151e6d;
+    background-color: rgb(5, 7, 78);
+    color: white;
 
-    transition: width 200ms;
-    transition: height 200ms;
+    border: none;
+    box-shadow: -1px 2px 1px rgb(51, 51, 51);
 
 }
 
 button[name="send"]:hover {
-    width: 3.5em;
-    height: 3.5em;
+    background-color: #151e6d;
+}
+button[name="send"]:active {
+    background-color: #ffffff;
+    color: #151e6d;
 }

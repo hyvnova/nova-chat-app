@@ -1,5 +1,5 @@
 .console-cursor {
-    width: 100% !important;
+    width: fit-content !important;
 
     font-family: Consolas;
     color: white;
@@ -24,9 +24,20 @@
 .console-command-line {
     width: max-content;
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     justify-content: flex-start;
 
     margin: 0.5em;
+
+}
+
+.cursor-form {
+    display: flex !important;
+    flex-flow: row wrap;
+    background: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    width: max-content;
 
 }
