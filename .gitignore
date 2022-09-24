@@ -18,7 +18,9 @@
 .env.test.local
 .env.production.local
 workflow.txt
-
+package.json
+package-lock.json
+src\contexts\socket.jsx
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
