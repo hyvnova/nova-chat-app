@@ -39,10 +39,6 @@ export default function LoginForm({handleSubmit}) {
             }
             </div>
             <p>Enter a room code and share with others to join the same room!</p>
-
-
-            
-
         </form>
     );
 }

@@ -3,6 +3,7 @@ import "./loginIU/styles/local.css";
 
 // components
 import LoginForm from "./loginIU/LoginForm";
+import Version from "./Version";
 
 // hooks
 import { useContext } from "react";
@@ -36,6 +37,9 @@ export default function LoginUI() {
     return (
     <>
         <LoginForm handleSubmit={formHandleSubmit}/>
+        <footer>
+            <Version />
+        </footer>
     </>
     );
 }

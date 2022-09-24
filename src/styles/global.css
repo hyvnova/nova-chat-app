@@ -8,6 +8,8 @@ body, div#root {
   background-color: #0B1322;
   width: 100%;
   height: 100%;
+
+  overflow: hidden;
 }
 
 [draggable=true] {
@@ -17,6 +19,20 @@ body, div#root {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5em 2em;
+}
+
+.version {
+  color: rgb(228, 228, 228);
+  font-size: 18px;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
