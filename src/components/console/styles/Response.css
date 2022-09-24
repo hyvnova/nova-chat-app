@@ -1,0 +1,26 @@
+.response-box {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    padding: 0.5em;
+    margin: 0 0.35em;
+    border-bottom: 2px solid white;
+}
+
+.response-text {
+    color: white;
+    font-family: Consolas;
+}
+.response-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    font-size: 38px;
+    width: 1em;
+    height: 1em;
+    margin-bottom: 0.35em;
+    margin-right: 0.25em;
+    
+}

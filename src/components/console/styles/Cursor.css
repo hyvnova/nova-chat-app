@@ -3,6 +3,9 @@
 
     font-family: Consolas;
     color: white;
+
+    margin: 0 !important;
+    height: fit-content;
 }
 
 .console-input {
@@ -10,7 +13,7 @@
     display: inline;
     width: max-content !important; 
  
-    margin-left: 0.5em !important;
+    margin: 0 0 0 0.5em !important;
     height: 1.2em !important;
     color: white;
 
@@ -24,18 +27,22 @@
 .console-command-line {
     width: max-content;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     justify-content: flex-start;
-
-    margin: 0.5em;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+    margin: 0.5em 0.5em 0 1em ;
 
 }
 
 .cursor-form {
+    box-sizing: border-box;
     display: flex !important;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     background: none !important;
     margin: 0 !important;
+
+
     padding: 0 !important;
 
     width: max-content;

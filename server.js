@@ -73,7 +73,7 @@ io.on("connection", socket => {
         activeUsers[socket.room].ids = activeUsers[socket.room].ids.filter(item => ( item !== socket.id) );
 
         io.to(socket.room).emit("update-active-users", activeUsers[socket.room].count);
-        // io.to(socket.room).emit("user-left-room", LEAVE_ROOM_MESSAGE(socket.room, socket.username))
+        io.to(socket.room).emit("user-left-room", LEAVE_ROOM_MESSAGE(socket.room, socket.username))
     })
 
     socket.on("leave", room => {
@@ -84,7 +84,7 @@ io.on("connection", socket => {
         activeUsers[room].ids = activeUsers[room].ids.filter(item => ( item !== socket.id) );
 
         io.to(room).emit("update-active-users", activeUsers[socket.room].count);
-        // io.to(room).emit("user-left-room", LEAVE_ROOM_MESSAGE(socket.room, socket.username))
+        io.to(room).emit("user-left-room", LEAVE_ROOM_MESSAGE(socket.room, socket.username))
     })
 
     socket.on("join-room", (room, username) => {
@@ -109,7 +109,7 @@ io.on("connection", socket => {
         }
 
         io.to(room).emit("update-active-users", activeUsers[socket.room].count)
-        // io.to(room).emit("user-joined-room", JOIN_ROOM_MESSAGE(room, username))
+        io.to(room).emit("user-joined-room", JOIN_ROOM_MESSAGE(room, username))
     })
     
     socket.on("send-message", (message, room) => {

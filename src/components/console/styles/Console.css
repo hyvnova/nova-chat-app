@@ -2,7 +2,7 @@
     /* max priority */
     z-index: 10;
 
-    position: fixed;
+    position: absolute;
     top: 7%;
     left: 6%;
 
@@ -19,6 +19,10 @@
     background-color: black;
 
     opacity: 0.8;
+
+    resize:both;
+    overflow:auto; /* something other than visible */
+    max-height: fit-content;
 }
 
 .console-nav {

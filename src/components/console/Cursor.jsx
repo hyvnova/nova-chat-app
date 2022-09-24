@@ -13,12 +13,14 @@ export default function Cursor({inputState, handleOnSubmit}) {
                 <span style={{color: "greenyellow"}}>nova-cmd</span>
                 ]-[
                 <span style={{color: "red"}}>~\..\console</span>
-                ] &raquo;
+                ] 
 
             </p>
             
             <form onSubmit={handleOnSubmit} className="cursor-form">
-                <input type="text" className="console-input"  
+
+                <label htmlFor="consoleInput" className="console-cursor">&raquo;</label>
+                <input type="text" id="consoleInput" className="console-input"  
                     maxLength={30} 
                     autoFocus
                     autoComplete="off"

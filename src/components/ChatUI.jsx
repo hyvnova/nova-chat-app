@@ -46,15 +46,15 @@ export default function ChatUI() {
       
     })}, [])
   
-  // // when user joins the room
-  // socket.on("user-joined-room", join_message => {
-  //   setChatItems([ join_message , ...chatItems])
-  // })
+  // when user joins the room
+  socket.on("user-joined-room", join_message => {
+    setChatItems([ join_message , ...chatItems])
+  })
 
-  // // when user leaves the room
-  // socket.on("user-left-room", left_message => {
-  //   setChatItems([ left_message , ...chatItems])
-  // })
+  // when user leaves the room
+  socket.on("user-left-room", left_message => {
+    setChatItems([ left_message , ...chatItems])
+  })
 
 
   // reciveving messages
@@ -96,8 +96,7 @@ export default function ChatUI() {
       <ChatContainer  chatItems={chatItems} />
       <MessageForm handleSubmit={formHandleSubmit} />
 
-      <Console />
-      {/* {showConsole && <Console props={{setShowConsole}}/>} */}
+      {showConsole && <Console props={{setShowConsole}}/>}
     </>
   );
 }

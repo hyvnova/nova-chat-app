@@ -1,4 +1,3 @@
-import {v4 as uuid} from "uuid"
 
 //css
 import "./console/styles/Console.css"
@@ -13,17 +12,16 @@ import { DataContext } from "../contexts/data"
 import Cursor from "./console/Cursor"
 import Response from "./console/Response"
 
-function set(args) {
-
-}
-
+//commands
+import { set } from "./console/commands"
 
 export default function Console() {
-    const {setShowConsole} = useContext(DataContext)
 
     const [consoleInput, setConsoleInput]  = useState("");
-    const [screenItems, setScreenItems] = useState([])
+    const [screenItems, setScreenItems] = useState([ ])
 
+    const Data = useContext(DataContext)
+    let {setShowConsole} = Data
 
     // console logic
     function handleOnSubmit(e) {
@@ -33,32 +31,45 @@ export default function Console() {
 
         // what the command gonna do
         let action = args[0].toLowerCase()
-        args.slice(1) // remove action
+        args = args.slice(1) // remove action
+
+        // especial commands
+        if (action === "clear" || action === "cls")  {
+            setScreenItems([]);
+            setConsoleInput("")
+            return
+        } else if (action === "exit" || action === "close") {
+            setConsoleInput("")
+            setShowConsole(false)
+            return
+        }
+
 
         let callback = {
             set: set
         }[action]
 
-
         // if action is unknown
-        if ( callback === undefined ) {
-            setScreenItems([{content: "Unkown Command"}, ...screenItems])
-        }
-        
+        if ( callback === undefined ) { setScreenItems([{content: "Unkown Command", type: "error"}, ...screenItems]) }
+        // if action is valid return callback response
+        else{ setScreenItems([callback(args, Data), ...screenItems]) }    
 
+        // clear input
+        setConsoleInput("")
     }
 
 
     return (
-        <div className="console-box" >
+        <div className="console-box" draggable="true">
             <nav className="console-nav" >
                 <button className="close-buttom" onClick={() => {setShowConsole(false)} }>
                     &#10005;
                 </button>
             </nav>
 
-            <div className="console-screen">
+            <div  className="console-screen">
                 <Cursor inputState={[consoleInput, setConsoleInput]} handleOnSubmit={handleOnSubmit} />
+
                 {screenItems.map((item, index) => {
                         return <Response key={index} props={item} />
                     })

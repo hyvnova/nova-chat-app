@@ -10,6 +10,10 @@ body, div#root {
   height: 100%;
 }
 
+[draggable=true] {
+  cursor: move;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

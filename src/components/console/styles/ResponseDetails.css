@@ -1,0 +1,16 @@
+
+.response-details-box {
+    display: flex;
+    flex-flow: column wrap;
+    padding: 0.25em;    
+    margin: 0 1em;
+}
+
+.response-details-list {
+    list-style: circle inside white;
+}
+
+.response-details-list-item {
+    color: white;
+    font-size: 20px;
+}

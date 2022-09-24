@@ -16,17 +16,18 @@ import { DataContext } from "./contexts/data";
 import { useState } from 'react';
 
 export default function App() {
-    var [username, setUsername] = useState("");
-    var [room, setRoom] = useState("");
-    var [showConsole, setShowConsole] = useState(false);
+    const [username, setUsername] = useState(localStorage.getItem("username") || "");
+    localStorage.setItem("username", username)
+
+    const [room, setRoom] = useState(localStorage.getItem("room") || "");
+    localStorage.setItem("room", room)
+
+    const [showConsole, setShowConsole] = useState(false);
 
     // message author text color
-    var [color, setColor] = useState(localStorage.getItem("color")); 
-    if (color === undefined) {
-        setColor("#" + Math.floor(Math.random()*16777215).toString(16))
-        localStorage.setItem("color", color)
+    const [color, setColor] = useState(localStorage.getItem("color") || "#" + Math.floor(Math.random()*16777215).toString(16)); 
+    localStorage.setItem("color", color)
 
-    } 
 
     return (
     <>

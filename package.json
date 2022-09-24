@@ -10,6 +10,8 @@
     "gh-pages": "^4.0.0",
     "http": "^0.0.1-security",
     "react": "^18.2.0",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
