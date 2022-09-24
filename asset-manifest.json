@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/nova-chat-app/static/css/main.4d2077fa.css",
-    "main.js": "/nova-chat-app/static/js/main.44a2015c.js",
+    "main.css": "/nova-chat-app/static/css/main.b57960dd.css",
+    "main.js": "/nova-chat-app/static/js/main.08b43062.js",
     "static/media/enhanced_terminal_bg_2.png": "/nova-chat-app/static/media/enhanced_terminal_bg_2.f191c6c2188599f64368.png",
     "index.html": "/nova-chat-app/index.html",
-    "main.4d2077fa.css.map": "/nova-chat-app/static/css/main.4d2077fa.css.map",
-    "main.44a2015c.js.map": "/nova-chat-app/static/js/main.44a2015c.js.map"
+    "main.b57960dd.css.map": "/nova-chat-app/static/css/main.b57960dd.css.map",
+    "main.08b43062.js.map": "/nova-chat-app/static/js/main.08b43062.js.map"
   },
   "entrypoints": [
-    "static/css/main.4d2077fa.css",
-    "static/js/main.44a2015c.js"
+    "static/css/main.b57960dd.css",
+    "static/js/main.08b43062.js"
   ]
 }
