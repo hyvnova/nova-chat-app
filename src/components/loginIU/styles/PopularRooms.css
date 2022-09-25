@@ -1,0 +1,27 @@
+.popular-chats-box {
+    display: flex;
+    align-items: center;
+    flex-flow: column wrap;
+
+    background: rgb(38,46,255);
+    background: linear-gradient(180deg, rgba(38,46,255,1) 0%, rgba(76,69,218,1) 48%, rgba(85,0,221,1) 100%);
+
+    border-radius: 20px;
+
+    min-height: 15%;
+    padding: 0.5em;
+    margin: 2em;
+    animation: gradient 15s infinite ease;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+

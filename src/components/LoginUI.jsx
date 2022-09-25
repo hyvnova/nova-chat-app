@@ -4,6 +4,8 @@ import "./loginIU/styles/local.css";
 // components
 import LoginForm from "./loginIU/LoginForm";
 import Version from "./Version";
+import PopularChats from './loginIU/PopularRooms';
+
 
 // hooks
 import { useContext } from "react";
@@ -37,6 +39,9 @@ export default function LoginUI() {
     return (
     <>
         <LoginForm handleSubmit={formHandleSubmit}/>
+
+        <PopularChats />
+
         <footer>
             <Version />
         </footer>

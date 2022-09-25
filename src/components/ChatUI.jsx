@@ -45,16 +45,6 @@ export default function ChatUI() {
       ])
       
     })}, [])
-  
-  // when user joins the room
-  socket.on("user-joined-room", join_message => {
-    setChatItems([ join_message , ...chatItems])
-  })
-
-  // when user leaves the room
-  socket.on("user-left-room", left_message => {
-    setChatItems([ left_message , ...chatItems])
-  })
 
 
   // reciveving messages
@@ -95,7 +85,6 @@ export default function ChatUI() {
       <RoomInfo room={room} />
       <ChatContainer  chatItems={chatItems} />
       <MessageForm handleSubmit={formHandleSubmit} />
-
       {showConsole && <Console props={{setShowConsole}}/>}
     </>
   );
