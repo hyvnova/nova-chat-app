@@ -10,7 +10,7 @@ form {
     background-color: #0B1322;
 }
 
-label {
+label, .title {
     font-size: 36px;
     font-weight: bolder;
     color: white;

@@ -2,11 +2,11 @@
 import "./styles/RoomInfo.css"
 
 // hooks
-import useActiveUsers from "../../hooks/activeUser";
+import useUsersCount from "../../hooks/useUsersCount";
 
 // this is the thingy at the top right that show online persons and room code
 export default function RoomInfo({room}) {
-    const activeUsers = useActiveUsers(room);
+    const usersCount = useUsersCount(room);
 
     return (
         <div className="room-info-box">
@@ -22,7 +22,7 @@ export default function RoomInfo({room}) {
                 color: "white"
                 }}></i> 
                 <p>
-                    {activeUsers}
+                    {usersCount}
                 </p>
             </div>
         </div>

@@ -1,5 +1,6 @@
-export default function Version() {
-    const version = "1.6"
+// data
+import { version } from "../globalData"
 
+export default function Version() {
     return <p className="version-text"> v: {version} </p>
 }
