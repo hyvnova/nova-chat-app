@@ -18,8 +18,6 @@ export default function MessageForm({handleSubmit}) {
                 <input name="message-input" autoFocus type="text" 
                     placeholder="Message"
                     autoComplete="off"
-                    maxLength={300}
-
                 value={message}
                  onChange={
                     e => { setMessage(e.target.value); }
